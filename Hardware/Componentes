@@ -1,10 +1,10 @@
 # Componentes utilizados
-Un receptor infrarrojo (VS1838, HS0038A2, etc.).
++ Un módulo receptor infrarrojo con salida analógica y salida digital regulable. 
 
-Un buzzer.
++ Un buzzer.
 
-Dos LEDs de distintos colores.
++ Dos LEDs de distintos colores.
 
-Detector de humo (Sensor MQ-2).
++ Módulo detector de humo, con un sensor MQ-2 integrado.
 
-Módulo ESP-32 con capacidad para comunicación inalámbrica con WIFI y 5 pines GPIO.
++ Módulo ESP-32 con capacidad para comunicación inalámbrica con WIFI y 5 pines GPIO.
