@@ -1,6 +1,6 @@
 # Alarma de Incendios
 ## Introducción
-Mi proyecto consistirá en armar un sistema de alarma de incendios, que sea suficientemente confiable para ser utilizado en un ambiente de trabajo. Esto requerirá una serie de funciones y precauciones que aprovecharán las posibilidades del ESP-32.
+Mi proyecto consistirá en armar un sistema de alarma de incendios, que sea suficientemente confiable para ser utilizado en un ambiente de trabajo. Esto requerirá una serie de funciones que aprovecharán las posibilidades del ESP-32.
 
 ## Objetivos
 1. Responder a fuegos sin demoras significativas.
