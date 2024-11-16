@@ -21,3 +21,6 @@ El sistema tomará en cuenta las lecturas tanto de un sensor infrarrojo como de 
 
 ## Propuestas a futuro
 El sistema podría ser adaptado para controlar múltiples sistemas, distintas oficinas en un edificio, por ejemplo. Sería posible, entonces, monitorear el estado de cada una, y en caso de incendio, controlar el avance del fuego. Esto se podría combinar con otras aplicaciones, como sistemas de vigilancia o control de ambiente, tanto para la mejor prevención de accidentes como para un espacio de trabajo más cómodo. 
+
+## Más información
+En las carpetas del repositorio se encuentra más información del proyecto, y los archivos necesarios para hacerlo funcionar.
