@@ -10,6 +10,11 @@ Mi proyecto consistirá en armar un sistema de alarma de incendios, que sea sufi
 3. Permitir acceso rápido al estado del sistema a través de la red.
    
 ## Alcances
+- Mantener y actualizar una página web. Para acceder, hay que conectarse a la red del módulo ESP32.
+
+- Monitorear el estado de una sola habitación,
+
+- Alimentado con una batería de 9V, tendrá una autonomía limitada.
 
 ## Funcionalidad
 El sistema tomará en cuenta las lecturas tanto de un sensor infrarrojo como de un detector de humo para su lógica. En caso de activarse cualquiera de los sensores, el sistema activará su estado de alarma. Se encenderán el buzzer y el led rojo, y se enviarán alertas a la red. De lo contrario, se encenderá el led verde, y se enviarán actualizaciones a la red en intervalos regulares.
