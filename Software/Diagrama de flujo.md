@@ -1,41 +1,42 @@
 ```mermaid
 flowchart TD
-    Start([Start]) --> Setup[Initialize Pins & Serial]
-    Setup --> ConfigAP[Configure WiFi Access Point]
-    ConfigAP --> APSuccess{AP Created?}
-    APSuccess -->|No| Halt([Infinite Loop])
-    APSuccess -->|Yes| StartServer[Start Web Server]
-    StartServer --> MainLoop([Enter Main Loop])
+    A[Start app_main] --> B[Initialize NVS Flash]
+    B --> C[Configure GPIO & ADC]
+    C --> D[Initialize WiFi in AP Mode]
     
-    MainLoop --> CheckClient{New Client?}
-    CheckClient -->|No| MainLoop
-    CheckClient -->|Yes| ClientConnected[Log New Client]
+    D --> E[Start HTTP Server]
+    E --> F[Register URI Handlers]
     
-    ClientConnected --> ReadData{Client Data Available?}
-    ReadData -->|No| CheckConnection{Still Connected?}
-    ReadData -->|Yes| ProcessChar[Read Character]
+    %% URI Handlers Registration
+    F --> G[Main Page /]
+    F --> H[Sensors Data /sensors]
+    F --> I[LED Control /H and /L]
     
-    ProcessChar --> IsNewLine{Is Newline?}
-    IsNewLine -->|No| AppendLine[Append to Current Line]
-    IsNewLine -->|Yes| LineEmpty{Line Empty?}
+    %% Main Page Flow
+    G --> J{Client Request}
+    J -->|GET /| K[Send HTML Page]
     
-    LineEmpty -->|No| CheckEndpoints[Check Request Type]
-    LineEmpty -->|Yes| ProcessRequest[Process Full Request]
+    %% Sensor Data Flow
+    J -->|GET /sensors| L[Read ADC Values]
+    L --> M[Send Sensor Data]
     
-    ProcessRequest --> CheckRequestType{Request Type?}
-    CheckRequestType -->|/sensors| SendSensorData[Send Sensor Values]
-    CheckRequestType -->|Other| SendHTML[Send HTML Page]
-    CheckRequestType -->|/H| TurnLEDOn[Turn LED ON]
-    CheckRequestType -->|/L| TurnLEDOff[Turn LED OFF]
+    %% LED Control Flow
+    J -->|GET /H or /L| N{Check URI}
+    N -->|/H| O[Turn LED ON]
+    N -->|/L| P[Turn LED OFF]
+    O & P --> Q[Redirect to Main Page]
     
-    SendSensorData --> CloseClient[Close Client Connection]
-    SendHTML --> CloseClient
-    TurnLEDOn --> ReadData
-    TurnLEDOff --> ReadData
+    %% WiFi Events
+    R[WiFi Event Handler] --> S{Event Type}
+    S -->|Station Connected| T[Log Connection]
+    S -->|Station Disconnected| U[Log Disconnection]
     
-    AppendLine --> ReadData
-    CheckConnection -->|Yes| ReadData
-    CheckConnection -->|No| CloseClient
+    %% Web Client Updates
+    V[Browser Client] -->|Every 2s| W[Request Sensor Data]
+    W --> L
     
-    CloseClient --> MainLoop
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+    style R fill:#bfb,stroke:#333,stroke-width:2px
+    style V fill:#fbf,stroke:#333,stroke-width:2px
 ```
