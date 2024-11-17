@@ -6,13 +6,14 @@
 
 + Un buzzer. Alertará al usuario en caso de incendio.
 
-+ Dos LEDs de distintos colores, preferiblemente rojo y verde. Junto con el buzzer, permiten conocer el estado de
-  alerta.
++ Dos LEDs de distintos colores, preferiblemente rojo y verde. Junto con el buzzer, permiten
+  conocer el estado de alerta.
 
 + Módulo detector de humo, con un sensor MQ-2 integrado. Detecta GLP, propano, 
   metano, alcohol, hidrógeno y humo; siendo más sensible a los dos primeros y al hidrógeno.
 
-+ Módulo ESP-32 con capacidad para comunicación inalámbrica con WIFI y 5 pines GPIO.
++ Módulo ESP-32 con capacidad para comunicación inalámbrica con WIFI y 5 pines GPIO. Yo utilizo
+  el kit ESP32 DEVKIT V1.
 
 + Logic Level Shifter de cuatro canales, necesario para permitir la comunicación entre los
   pines GPIO del ESP y los sensores.
