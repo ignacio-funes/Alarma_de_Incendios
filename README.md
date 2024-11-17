@@ -12,7 +12,7 @@ Mi proyecto consistirá en armar un sistema de alarma de incendios, que sea sufi
 ## Alcances
 - Mantener y actualizar una página web. Para acceder, hay que conectarse a la red del módulo ESP32.
 
-- Monitorear el estado de una sola habitación,
+- Monitorear el estado de una sola habitación.
 
 - Alimentado con una batería de 9V, tendrá una autonomía limitada.
 
