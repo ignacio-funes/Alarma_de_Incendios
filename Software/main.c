@@ -226,16 +226,6 @@ static httpd_handle_t start_webserver(void)
     return NULL;
 }
 
-static void deinit_adc(void)
-{
-    if (do_calibration) {
-        #if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
-        adc_cali_delete_scheme_curve_fitting(adc1_cali_handle);
-        #endif
-    }
-    
-    ESP_ERROR_CHECK(adc_oneshot_del_unit(adc1_handle));
-}
 
 static void wifi_event_handler(void* arg, esp_event_base_t event_base,
                                     int32_t event_id, void* event_data)
