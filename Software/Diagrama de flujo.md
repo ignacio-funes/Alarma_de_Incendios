@@ -27,8 +27,8 @@ graph TD
     P --> R[Serve HTML Page]
     Q --> S[Return Sensor Values<br/>and Alarm State]
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style O fill:#bbf,stroke:#333,stroke-width:2px
-    style H fill:#bfb,stroke:#333,stroke-width:2px
-    style K fill:#fbb,stroke:#333,stroke-width:2px
+    style A fill:##b3a,stroke:#333,stroke-width:2px
+    style O fill:#b3a,stroke:#333,stroke-width:2px
+    style H fill:#b3a,stroke:#333,stroke-width:2px
+    style K fill:#b3a,stroke:#333,stroke-width:2px
 ```
