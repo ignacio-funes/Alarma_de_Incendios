@@ -77,7 +77,7 @@ static void init_gpio(void)
         .intr_type = GPIO_INTR_DISABLE
     };
     gpio_config(&io_conf);
-    update_outputs(false);  // Initialize to red state
+    update_outputs(false);  
 }
 
 static bool init_adc(void)
@@ -177,8 +177,8 @@ static esp_err_t status_handler(httpd_req_t *req)
     // If calibrated, convert to mV for display
     if (do_calibration) {
         snprintf(resp, sizeof(resp), "%d,%d,%d\n", 
-                gas_value, // Already in mV
-                ir_value,  // Already in mV
+                gas_value, 
+                ir_value,  
                 alarm_state ? 1 : 0);
     } else {
         snprintf(resp, sizeof(resp), "%d,%d,%d\n", 
@@ -194,7 +194,7 @@ static esp_err_t status_handler(httpd_req_t *req)
 
 static esp_err_t root_handler(httpd_req_t *req)
 {
-    const char* html = get_html_content();  // Define this function with the HTML from previous example
+    const char* html = get_html_content(); 
     httpd_resp_set_type(req, "text/html");
     return httpd_resp_send(req, html, strlen(html));
 }
