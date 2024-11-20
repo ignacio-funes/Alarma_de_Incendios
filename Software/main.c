@@ -50,9 +50,9 @@
 
 static adc_oneshot_unit_handle_t adc1_handle;
 static adc_cali_handle_t adc1_cali_handle = NULL;
-static bool do_calibration;
 
 static bool alarm_state = false;
+static bool do_calibration;
 
 static const char *TAG = "wifi softAP";
 
